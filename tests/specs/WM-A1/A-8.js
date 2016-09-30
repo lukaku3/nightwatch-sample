@@ -55,13 +55,9 @@ module.exports = {
             const cheerio = require('cheerio');
             const $ = cheerio.load(result.value);
             this.pause(1000)
-            $('#areaBTable > tbody > tr > td:nth-child(2) > span').each( function(i){
-//console.log( $(this).text() );
-            })
-            //
+            this.expect.element('#g434 > ul > li:nth-child(' + $('#g434 > ul > li').length + ')').to.have.attribute('data-publishstatus')
+                .equals('OFF');
             this.expect.element('#areaBTable > tbody > tr:nth-child(' +  $('#areaBTable > tbody > tr').length  + ') > td:nth-child(2) > span').text.to.match(/Copy_of_New_folder_/);
-            console.log( $('#areaBTable > tbody > tr').length );
-            console.log( $('#areaBTable > tbody > tr:nth-child(' +  $('#areaBTable > tbody > tr').length  + ') > td:nth-child(2) > span').prop('data-publishstatus') );
         })
 
     auth.logout(client); // logout
