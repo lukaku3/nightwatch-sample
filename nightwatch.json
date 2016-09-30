@@ -1,0 +1,177 @@
+{
+  "src_folders" : ["tests"],
+  "output_folder" : "reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "",
+
+  "selenium" : {
+    "start_process" : false,
+    "start_session" : true,
+    "server_path" : "./node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.53.1.jar",
+    "log_path" : "",
+    "host" : "127.0.0.1",
+    "port" : 4444,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "derivers/chromedriver",
+      "webdriver.ie.driver" : ""
+    }
+  },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://192.168.11.102:18080/webmeister/login.do?customer_cd=eeide53192&lang=jp",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "127.0.0.1",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : true,
+        "path" : "screenshots"
+      },
+      "globals" : {
+        "myGlobalVar" : "some value",
+        "otherGlobal" : "some other value",
+        "title"       : "Web Meister 5j",
+        "users" : {
+            "default" : {
+                "privilage" : "Web Integrator",
+                "loginId"   : "sudo",
+                "password"  : "sudosudo",
+                "customerCd": "eeide53192",
+                "desc"      : ""
+            },
+            "selenium0" : {
+                "privilage" : "content editor",
+                "loginId"   : "selenium0",
+                "password"  : "selenium0",
+                "desc"      : ""
+            },
+            "selenium1" : {
+                "privilage" : "content editor",
+                "loginId"   : "selenium1",
+                "password"  : "selenium1",
+                "desc"      : ""
+            },
+            "selenium21" : {
+                "privilage" : "content editor",
+                "loginId"   : "selenium21",
+                "password"  : "selenium21",
+                "desc"      : ""
+            }
+        },
+        "values" : {
+            "application" : {
+                "config" : {
+                    "user_limit" : 50
+                }
+            },
+            "contextmenu" : {
+                "dir" : {
+                    "ディレクトリ編集" : {
+                        "stat" : [-1, 1]
+                    },
+                    "新規作成" : {
+                        "stat" : [-1, 1]
+                    },
+                    "コピー" : {
+                        "stat" : [-1, 1]
+                    },
+                    "貼付け" : {
+                        "stat" : [-1, 1]
+                    },
+                    "リンクコピー" : {
+                        "stat" : [-1, 1]
+                    },
+                    "リンク貼付け" : {
+                        "stat" : [-1, 1]
+                    },
+                    "削除" : {
+                        "stat" : [-1, 1]
+                    },
+                    "公開期間の設定" : {
+                        "stat" : [-1, 1]
+                    },
+                    "プロパティ" : {
+                        "stat" : [-1, 1]
+                    }
+                }
+
+            },
+            "users" : {
+                "add" : {
+                    "loginId"   : "selenium_add",
+                    "password"  : "selenium123",
+                    "lastName"  : "selenium_ln",
+                    "firstname" : "selenium_fn",
+                    "email"     : "selenium_add@localhost.localdomain"
+                }
+            },
+            "groups" : {
+                "add" : {
+                    "name" : "used_by_selenium"
+                }
+            },
+            "work_flow" : {
+                "range" : {
+                    "default" : "/jp.vcube.com/NULL/test_demo",
+                    "edit"    : "/jp.vcube.com/NULL/tamura"
+                }
+            }
+        },
+        "messages" : {
+            "link_page"   : {
+                "title" : "新規リンクページ",
+                "linkDesURL" : "/sdo/selenium/linkpg"
+            },
+            "workflow" : {
+                "no_approvers" : {
+                    "ja" : "ユーザの一覧にユーザか省略のどちらかを選択してください。"
+                },
+                "no_range" : {
+                    "ja" : "承認範囲を選択してください。"
+                },
+                "no_flow_name" : {
+                    "ja" : "ワークフロー名は空白です。ワークフロー名を入力してください。"
+                }
+            },
+            "config" : {
+                "password" : {
+                    "ja" : {
+                        "caption" : "環境設定:パスワード"
+                    }
+                }
+            }
+        }
+      },
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+    "ie": {
+      "selenium_port"  : 4444,
+      "selenium_host"  : "192.168.11.26",
+      "desiredCapabilities": {
+        "browserName": "internet explorer",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+    "chrome" : {
+      "selenium_port"  : 4444,
+      "selenium_host"  : "192.168.11.26",
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": [ "disable-extensions" ]
+        }
+      }
+    }
+  }
+}
+
+
